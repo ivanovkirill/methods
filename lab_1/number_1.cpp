@@ -1,7 +1,20 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#include <ctype.h>
 using namespace std;
+
+double validation(double check){
+	cin >> check;
+	while (cin.fail()){
+		cout << "Введенные данные некоректны. повторите попытку" << endl;
+		cin.clear();
+		cin.sync();
+		while( cin.get() != '\n' );
+		cin >> check;
+	}
+	return check;
+}
 
 int main(){
 	double capital;
@@ -11,11 +24,14 @@ int main(){
 	double answer;
 
 	cout << "Введите стартовый капитал: \n";
-	cin >> capital;
+	validation(capital);
+	cout << capital;
 	cout << "Введите ежемесечное увелечение капитала: \n";
-	cin >> capitalUp;
+	validation(capitalUp);
+	cout << capitalUp;
 	cout << "Введите стоимость магазина: \n";
-	cin >> shopCost;
+	validation(shopCost);
+	cout << shopCost;
 
 	mounth = ceil(log(shopCost / capital) / log((100 + capitalUp) / 100));
 	answer = ceil(mounth / 12);
