@@ -24,14 +24,11 @@ int main(){
 	double answer;
 
 	cout << "Введите стартовый капитал: \n";
-	validation(capital);
-	cout << capital;
+	capital = validation(capital);
 	cout << "Введите ежемесечное увелечение капитала: \n";
-	validation(capitalUp);
-	cout << capitalUp;
+	capitalUp = validation(capitalUp);
 	cout << "Введите стоимость магазина: \n";
-	validation(shopCost);
-	cout << shopCost;
+	shopCost = validation(shopCost);
 
 	mounth = ceil(log(shopCost / capital) / log((100 + capitalUp) / 100));
 	answer = ceil(mounth / 12);
