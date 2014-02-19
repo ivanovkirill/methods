@@ -6,7 +6,7 @@ using namespace std;
 
 double validation(double check){
 	cin >> check;
-	while (cin.fail()){
+	while ((cin.fail()) || (check < 0) ){
 		cout << "Введенные данные некоректны. повторите попытку" << endl;
 		cin.clear();
 		cin.sync();
@@ -32,6 +32,6 @@ int main(){
 
 	mounth = ceil(log(shopCost / capital) / log((100 + capitalUp) / 100));
 	answer = ceil(mounth / 12);
-	cout << "Комераснт сможет купить магазин через " << answer << " лет\n";
+	cout << "Комераснт сможет купить магазин через " << answer << " лет" << endl;
 	return 0;
 }
