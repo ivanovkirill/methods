@@ -60,17 +60,18 @@ int main(){
 			answerQuestionTwo = "комбикром";
 		}
 		else{
-				min = grain;
-				answerQuestionTwo = "зерно";
-			}
-			}else if ((remainigFeed * 50 / feed) < (remainigSilage * 1000 / silage)) {
-				min = feed;
-				answerQuestionTwo = "комбикром";
-			}
-			else{
-				min = silage;
-				answerQuestionTwo = "силос";
+			min = grain;
+			answerQuestionTwo = "зерно";
 		}
+	}
+	else if ((remainigFeed * 50 / feed) < (remainigSilage * 1000 / silage)){
+			min = feed;
+			answerQuestionTwo = "комбикром";
+		}
+		else{
+			min = silage;
+			answerQuestionTwo = "силос";
+	}
 	answerQuestionOne = ceil(min / cowInHerd);
 	cout << "Кормить стадо можно еще " << answerQuestionOne << " дней" << endl;
 	cout << "Раньше всего кончится " << answerQuestionTwo << endl;
